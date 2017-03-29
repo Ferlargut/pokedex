@@ -61,4 +61,30 @@ function mostrarPokemons2() {
         listaPokemons2.appendChild(elemento);
     });
 }
+function peleaPokemon() {
+    var pokemon2=document.getElementsByTagName("select")[1].value;
+    var pokemon1=document.getElementsByTagName("select")[0].value;
+    var campo=document.getElementById("campo");
+    var pokemon11={};
+    var pokemon22={};
+    pokemons.filter(function(pokemon) {
+        if (pokemon.nombre==pokemon1){
+            pokemon11=pokemon;
+        }
+    })
+    pokemons.filter(function(pokemon) {
+        if (pokemon.nombre==pokemon2){
+            pokemon22=pokemon;
+        }
+    })
+    pokemon11.pelear(pokemon22);
+    campo.innerText="A "+pokemon22.nombre+" le queda "+pokemon22.vida+" de vida ";
+    console.log(pokemon11);
 
+   
+
+   // pokemons.filter(function(pokemon){if(pokemon.nombre==pokemon1){alert(pokemon.nombre);}}
+
+
+   
+}
